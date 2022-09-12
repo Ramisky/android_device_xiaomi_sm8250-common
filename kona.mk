@@ -303,6 +303,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
+# Metadata Encryption
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.crypto.dm_default_key.options_format.version=2 \
+	ro.crypto.volume.filenames_mode=aes-256-cts
+
 # Mlipay
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.mlipay@1.1.vendor \
